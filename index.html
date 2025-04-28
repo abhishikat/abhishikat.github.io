@@ -3,99 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abhishikat Kumar Soni - Portfolio">
-    <title>Abhishikat Kumar Soni | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Abhishikat Soni - Technical Strategist & Deep Tech Expert</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .bg-tech-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Abhishikat Soni</h1>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-tech-pattern text-white">
+        <div class="container mx-auto px-4 py-20 flex flex-col items-center">
+            <h1 class="text-5xl font-bold mb-4 text-center">Abhishikat Soni</h1>
+            <h2 class="text-2xl mb-6 text-blue-300 text-center">Technical Strategist & Deep Tech Expert</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="mailto:asoni7@jh.edu" class="flex items-center text-white hover:text-blue-300 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i> asoni7@jh.edu
+                </a>
+                <a href="tel:6676579129" class="flex items-center text-white hover:text-blue-300 transition-colors">
+                    <i class="fas fa-phone mr-2"></i> 667-657-9129
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="flex items-center text-white hover:text-blue-300 transition-colors">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                </a>
+                <span class="flex items-center text-white">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Berlin/New York
+                </span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="flex gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-colors shadow-lg">Contact Me</a>
+                <a href="#portfolio" class="bg-transparent border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-2 px-6 rounded-full transition-colors">View Portfolio</a>
+            </div>
         </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hello, I'm Abhishikat Kumar Soni</h1>
-                <p>Currently Updating Website</p>
-                <a href="#portfolio" class="btn">View My Work</a>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="text-xl font-bold text-blue-600">AS</div>
+                <div class="flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
             </div>
         </div>
-    </section>
+    </nav>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="images/profile.jpg" alt="Profile Picture">
-                <div class="about-text">
-                    <p>I am a graduate student with a passion for Finance, Consulting and Product Management. Currently pursuing my Master of Science in Engineering Management at Johns Hopkins University, I bring a strong foundation in Product Management and Consulting to the table.</p>
-                    <p>My experience includes developing comprehensive financial models, conducting interviews, customer segmentation, implementing strategic recommendations for various clients and many more. I am excited to bring my skills and experience to new challenges and opportunities.</p>
-                    <a href="#resume" class="btn">View My Resume</a>
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">About Me</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    I'm a technical strategist with an engineering background and deep tech expertise, specializing in identifying and evaluating high-potential early-stage companies. With a proven track record in analyzing complex technical solutions, I deliver structured analysis and communicate with precision.
+                </p>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    My extensive experience spans cross-functional collaboration, market intelligence, and building founder relationships. I'm passionate about deep tech innovations with a keen eye for venture-scale opportunities in transformational technology.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Education</h3>
+                    <div class="mb-4">
+                        <div class="flex justify-between items-baseline">
+                            <h4 class="text-lg font-medium text-blue-700">Johns Hopkins University, Baltimore</h4>
+                            <span class="text-gray-500">August 2023 – December 2024</span>
+                        </div>
+                        <p class="text-gray-700">M.S. in Engineering Management</p>
+                        <p class="text-gray-600 mt-1">Teaching Assistantships: Python, Java, Deep Learning, Data Patterns, Algorithms, Financial Modelling and Valuation, Pricing Analysis.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h4 class="text-lg font-medium text-blue-700">BMS College of Engineering, Bangalore</h4>
+                            <span class="text-gray-500">July 2018 - August 2022</span>
+                        </div>
+                        <p class="text-gray-700">B.E. in Computer Science</p>
+                        <p class="text-gray-600 mt-1">Leadership: Vice President and Head of R&D, Computer Science Department</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume">
-        <div class="container">
-            <h2>Resume</h2>
-            <p>Download my resume to learn more about my education, experience, and skills.</p>
-            <a href="resume.pdf" class="btn" download>Download Resume</a>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Professional Experience</h2>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
+                
+                <!-- Work Experience -->
+                <div class="mb-16 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -mt-3 w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-auto mr-0 md:mr-auto md:ml-0 md:w-5/12 relative">
+                        <span class="bg-blue-600 text-white text-sm font-semibold py-1 px-3 rounded-full absolute top-0 -mt-3">2022 - 2023</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-4">Technical Business Consultant GET</h3>
+                        <h4 class="text-lg text-blue-600 mb-2">Mercedes Benz | Bangalore</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Spearheaded SQL and Python integration for data analysis, achieving 15% operational efficiency enhancement</li>
+                            <li>Developed reporting frameworks with SAP BusinessObjects and Power BI, enhancing data accuracy by 30%</li>
+                            <li>Orchestrated usability testing that improved operational efficiency by 37%</li>
+                            <li>Created forecasting models contributing to $2M increase in quarterly revenue</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Venture Capital & Deep Tech -->
+                <div class="mb-16 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -mt-3 w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 mr-auto ml-0 md:ml-auto md:mr-0 md:w-5/12 relative">
+                        <span class="bg-blue-600 text-white text-sm font-semibold py-1 px-3 rounded-full absolute top-0 -mt-3">2023 - Present</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-4">Deep Tech Startup Sourcing & Analysis</h3>
+                        <h4 class="text-lg text-blue-600 mb-2">Independent Research</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Built proprietary database of 70+ early-stage deep tech startups across US and Europe</li>
+                            <li>Developed evaluation framework focusing on technical differentiation and IP protection</li>
+                            <li>Authored detailed investment memos on high-potential companies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tesla Analysis -->
+                <div class="mb-16 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -mt-3 w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 ml-auto mr-0 md:mr-auto md:ml-0 md:w-5/12 relative">
+                        <span class="bg-blue-600 text-white text-sm font-semibold py-1 px-3 rounded-full absolute top-0 -mt-3">2024</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-4">Tesla Financial Analysis & Technical Evaluation</h3>
+                        <h4 class="text-lg text-blue-600 mb-2">Johns Hopkins University</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Conducted comprehensive financial modeling and technical due diligence</li>
+                            <li>Applied sophisticated valuation methodologies to assess Tesla's $13.2B Economic Value Added</li>
+                            <li>Presented findings to investment panel, synthesizing complex data into actionable recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Internship -->
+                <div class="mb-0 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -mt-3 w-6 h-6 rounded-full bg-blue-500 border-4 border-white shadow"></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 mr-auto ml-0 md:ml-auto md:mr-0 md:w-5/12 relative">
+                        <span class="bg-blue-600 text-white text-sm font-semibold py-1 px-3 rounded-full absolute top-0 -mt-3">2024</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-4">Business Strategy Analyst</h3>
+                        <h4 class="text-lg text-blue-600 mb-2">ScoutBetter AI | San Francisco</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Spearheaded cross-functional team collaboration, boosting completion rates by 30%</li>
+                            <li>Engineered interactive dashboards that contributed to 10% revenue increase</li>
+                            <li>Streamlined prototyping process, delivering 50+ iterations with 90% client satisfaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Skills & Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Skill Category 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Investment Evaluation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Due Diligence</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Market Assessment</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Technical Risk Analysis</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Venture-Scale Opportunity</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Zero-Defect Analysis</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Category 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Deep Tech Focus Areas</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Artificial Intelligence</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Autonomous Systems</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Materials Science</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Advanced Computing</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Climate Technologies</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Category 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Technical Expertise</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Full-Stack Development</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Data Science</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Cloud Infrastructure</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Category 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Communication</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Exceptional Writing</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Structured Analysis</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Technical Translation</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Investment Memo Creation</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Founder Communications</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Category 5 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Data Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SAP BusinessObjects</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Pandas</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NumPy</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Category 6 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Operational Excellence</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">High-Volume Assessment</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Detail-Oriented Evaluation</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Process Optimization</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prioritization</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Time Management</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/project1.jpg" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <h3>Project 1</h3>
-                        <p>Financial Statement Analysis of Tesla</p>
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tesla Financial Analysis</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive financial modeling and technical due diligence on Tesla's EV technology platform.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Financial Modeling</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Valuation</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Technical Analysis</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <div class="portfolio-overlay">
-                        <h3>Project 2</h3>
-                        <p>Executive Summary - Dollar General</p>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-database text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Deep Tech Startup Database</h3>
+                        <p class="text-gray-600 mb-4">Built and maintained a proprietary database of 70+ early-stage deep tech startups across US and Europe.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Market Research</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Due Diligence</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Technical Analysis</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="images/project3.jpg" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Project 3</h3>
-                        <p>Merger & Acquisition Strategy for Walgreens</p>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-search-dollar text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Investment Framework Development</h3>
+                        <p class="text-gray-600 mb-4">Developed a systematic framework for evaluating deep tech founders and technologies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Investment Analysis</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">AI/ML</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Materials Science</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="images/project3.jpg" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Project 4</h3>
-                        <p>Job Search Optimization for HandShake Portal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Relationships Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Sourcing & Founder Relationships</h2>
+            <div class="max-w-4xl mx-auto bg-blue-50 rounded-lg p-8 shadow-md border-l-4 border-blue-500">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-4">Systematic Approach</h3>
+                        <p class="text-gray-700 mb-6">
+                            I've developed a systematic approach to identifying promising early-stage founders before they gain widespread attention, focusing on technical capability, market timing, and venture-scale potential.
+                        </p>
+                        <h3 class="text-xl font-bold text-blue-700 mb-4">Relationship Building</h3>
+                        <p class="text-gray-700">
+                            I've built strong relationships with technical academics, research institutions, and emerging founders across multiple technology hubs.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-4">Opportunity Tracking</h3>
+                        <p class="text-gray-700 mb-6">
+                            Created and maintained detailed opportunity tracking systems that prioritize high-potential founders based on technical capability, market timing, and venture-scale potential.
+                        </p>
+                        <h3 class="text-xl font-bold text-blue-700 mb-4">Industry Engagement</h3>
+                        <p class="text-gray-700">
+                            Regular participant in deep tech meetups, accelerator demo days, and university innovation showcases to discover undiscovered talent.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -103,32 +371,74 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <form action="#" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <p>Connect with me on <a href="https://www.linkedin.com/in/abhishikat-kumar-soni/" target="_blank">LinkedIn</a>.</p>
+    <section id="contact" class="py-20 bg-tech-pattern text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-lg p-8 shadow-xl">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2 font-medium">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-700 mb-2 font-medium">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">Send Message</button>
+                </form>
+            </div>
+            <div class="flex justify-center mt-12 space-x-6">
+                <a href="mailto:asoni7@jh.edu" class="flex items-center bg-blue-800 hover:bg-blue-900 p-3 rounded-full transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="flex items-center bg-blue-800 hover:bg-blue-900 p-3 rounded-full transition-colors">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="tel:6676579129" class="flex items-center bg-blue-800 hover:bg-blue-900 p-3 rounded-full transition-colors">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Abhishikat Kumar Soni. All Rights Reserved.</p>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 Abhishikat Soni. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
