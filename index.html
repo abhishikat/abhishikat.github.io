@@ -9,91 +9,184 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --apple-bg: #000000; --apple-card: #1c1c1e; }
-        body { background-color: var(--apple-bg); overflow-x: hidden; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        body { background-color: var(--apple-bg); overflow-x: hidden; scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .glass-card { background: rgba(28, 28, 30, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease; }
+        .glass-card { background: rgba(28, 28, 30, 0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.05); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .glass-card:hover { transform: scale(1.02); }
-        .text-gradient { background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient { background: linear-gradient(180deg, #ffffff 0%, #86868b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient-blue { background: linear-gradient(90deg, #2997ff 0%, #a252fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-white font-sans antialiased">
+<body class="text-white font-sans antialiased selection:bg-blue-500/30">
 
-    <!-- Navbar (Fixed) -->
-    <nav class="fixed top-0 w-full z-50 glass-card border-none h-12 flex items-center justify-center space-x-8 text-xs font-light text-gray-400">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-none h-14 flex items-center justify-center space-x-8 text-xs font-medium text-gray-300 tracking-wide uppercase">
         <a href="#hero" class="hover:text-white transition">Intro</a>
-        <a href="#stats" class="hover:text-white transition">Impact</a>
+        <a href="#visuals" class="hover:text-white transition">Metrics</a>
         <a href="#experience" class="hover:text-white transition">Experience</a>
-        <a href="mailto:abhishikatsoni@gmail.com" class="hover:text-white transition underline">Contact</a>
+        <a href="#projects" class="hover:text-white transition">Projects</a>
+        <a href="#education" class="hover:text-white transition">Education</a>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-        <h2 class="text-blue-500 font-semibold tracking-widest uppercase text-sm mb-4 reveal">Engineering Consultant @ Google</h2>
-        <h1 class="text-6xl md:text-8xl font-bold tracking-tight text-gradient reveal">Abhishikat Kumar Soni.</h1>
-        <p class="text-xl md:text-3xl text-gray-400 mt-6 max-w-3xl reveal">Data Scientist. Private Equity Strategist. <br>Building the future at the intersection of AI and Finance.</p>
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <p class="text-blue-500 font-semibold tracking-widest uppercase text-xs mb-6 reveal">Austin, TX • Engineering Consultant</p>
+        <h1 class="text-7xl md:text-9xl font-bold tracking-tighter text-gradient reveal pb-4">Abhishikat.</h1>
+        <p class="text-2xl md:text-4xl text-gray-400 mt-6 max-w-4xl reveal leading-tight">
+            Bridging the gap between <span class="text-white">Artificial Intelligence</span>, <span class="text-white">Cloud Architecture</span>, and <span class="text-white">Financial Strategy</span>.
+        </p>
+        <div class="mt-12 flex gap-6 reveal">
+            <a href="https://www.linkedin.com/in/abhishikat" target="_blank" class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition text-sm tracking-wide">LinkedIn Profile</a>
+            <a href="mailto:abhishikatsoni@gmail.com" class="glass-card px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-sm tracking-wide">Contact Me</a>
+        </div>
     </section>
 
-    <!-- Bento Grid (Skills/Stats) -->
-    <section id="stats" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
-            <!-- Radar Chart Card -->
-            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal">
-                <h3 class="text-gray-400 text-sm font-medium mb-4 uppercase">Core Capabilities</h3>
-                <div class="h-full w-full flex items-center justify-center">
+    <!-- Visualizations (Bento Box Grid) -->
+    <section id="visuals" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gradient-blue reveal">Data-Driven Impact</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[320px]">
+            
+            <!-- Radar Chart (Spans 2 columns) -->
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal flex flex-col">
+                <h3 class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-2">Core Competencies</h3>
+                <div class="flex-grow relative w-full h-full flex justify-center items-center">
                     <canvas id="skillsRadar"></canvas>
                 </div>
             </div>
-            <!-- Rapid Stats Card -->
-            <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal">
-                <h3 class="text-gray-400 text-sm font-medium uppercase">Performance</h3>
-                <div>
-                    <span class="text-6xl font-bold text-blue-500">280%</span>
-                    <p class="text-gray-400 mt-2">Utilization increase at Johns Hopkins Hospital</p>
+
+            <!-- Stat 1 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col justify-center items-center text-center reveal">
+                <h3 class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">Financial Impact</h3>
+                <span class="text-6xl font-bold text-green-400">$2M</span>
+                <p class="text-sm text-gray-400 mt-4">Warranty claims saved via AI battery modeling at Mercedes-Benz.</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col justify-center items-center text-center reveal">
+                <h3 class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">Efficiency Scaling</h3>
+                <span class="text-6xl font-bold text-blue-500">2.3x</span>
+                <p class="text-sm text-gray-400 mt-4">Improvement in model evaluation throughput at Taboola.</p>
+            </div>
+
+            <!-- Tech Stack Doughnut (Spans 2 columns) -->
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal flex flex-col">
+                <h3 class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-2">Technology Distribution</h3>
+                <div class="flex-grow relative w-full h-full flex justify-center items-center">
+                    <canvas id="techDoughnut"></canvas>
                 </div>
             </div>
-            <!-- Secondary Stats -->
-            <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal">
-                <h3 class="text-gray-400 text-sm font-medium uppercase">Efficiency</h3>
-                <div>
-                    <span class="text-6xl font-bold text-purple-500">40%</span>
-                    <p class="text-gray-400 mt-2">Reduction in critical defects at Taboola</p>
-                </div>
-            </div>
-            <!-- Experience Distribution -->
-            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal">
-                <h3 class="text-gray-400 text-sm font-medium mb-4 uppercase">Project Outcomes</h3>
-                <canvas id="impactBar"></canvas>
+
+            <!-- Stat 3 -->
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 flex flex-col justify-center reveal">
+                <h3 class="text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">M&A Strategy</h3>
+                <span class="text-6xl font-bold text-white">$120M</span>
+                <p class="text-lg text-gray-400 mt-4">Supported the successful buyout of a mid-market asset management firm at Silver Alpine Capital through rigorous LBO/DCF modeling.</p>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline (High Contrast) -->
-    <section id="experience" class="py-32 px-6 max-w-4xl mx-auto">
-        <h2 class="text-5xl font-bold mb-20 text-gradient reveal">Career Evolution</h2>
-        <div class="space-y-24">
-            <div class="reveal">
-                <span class="text-blue-500 font-mono text-sm">2026 — PRESENT</span>
-                <h3 class="text-3xl font-bold mt-2">Google — Engineering Consultant</h3>
-                <p class="text-gray-400 mt-4 leading-relaxed text-lg">Leading rapid-response technical investigations into zero-day malware. Coordinating directly with Product and Policy teams to deploy global countermeasures.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 px-6 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gradient reveal">Professional Trajectory</h2>
+        <div class="space-y-16 border-l border-gray-800 ml-4 md:ml-0 md:border-none md:space-y-24">
+            
+            <!-- Google -->
+            <div class="relative pl-8 md:pl-0 reveal">
+                <div class="md:hidden absolute w-3 h-3 bg-blue-500 rounded-full -left-[6px] top-2"></div>
+                <p class="text-blue-500 font-mono text-sm mb-2">Jan 2026 — Present | Austin, TX</p>
+                <h3 class="text-3xl font-bold">Google <span class="text-gray-500 font-light">— Engineering Consultant</span></h3>
+                <p class="text-gray-400 mt-4 text-lg leading-relaxed">Working on rapid-response technical investigations into zero-day malware and bad-actor campaigns, coordinating directly with Product, Policy, and Engineering teams to deploy system-wide countermeasures within 24 hours of detection.</p>
             </div>
-            <div class="reveal">
-                <span class="text-purple-500 font-mono text-sm">2025 — 2026</span>
-                <h3 class="text-3xl font-bold mt-2">Taboola — DS Consultant</h3>
-                <p class="text-gray-400 mt-4 leading-relaxed text-lg">Engineered automated data validation pipelines. Improved model evaluation throughput by 2.3× and saved $50K+ in annual QA costs.</p>
+
+            <!-- Taboola -->
+            <div class="relative pl-8 md:pl-0 reveal">
+                <div class="md:hidden absolute w-3 h-3 bg-gray-600 rounded-full -left-[6px] top-2"></div>
+                <p class="text-gray-500 font-mono text-sm mb-2">Sep 2025 — Jan 2026 | New York, NY</p>
+                <h3 class="text-3xl font-bold">Taboola <span class="text-gray-500 font-light">— Consultant (Data Science/Eng)</span></h3>
+                <p class="text-gray-400 mt-4 text-lg leading-relaxed">Engineered automated data validation pipelines in Python and SQL across 10,000+ publisher outputs. Reduced critical defects by 40%, accelerated rollout by 3 weeks, and saved $50K+ annually in QA rework costs.</p>
             </div>
-            <div class="reveal">
-                <span class="text-gray-500 font-mono text-sm">2022 — 2023</span>
-                <h3 class="text-3xl font-bold mt-2">Mercedes-Benz — Data Scientist</h3>
-                <p class="text-gray-400 mt-4 leading-relaxed text-lg">AI-powered battery degradation modeling. Predicted EV battery life with 92% accuracy, driving $2M in savings.</p>
+
+            <!-- Silver Alpine -->
+            <div class="relative pl-8 md:pl-0 reveal">
+                <div class="md:hidden absolute w-3 h-3 bg-gray-600 rounded-full -left-[6px] top-2"></div>
+                <p class="text-gray-500 font-mono text-sm mb-2">May 2024 — Jul 2024 | Boston, MA</p>
+                <h3 class="text-3xl font-bold">Silver Alpine Capital <span class="text-gray-500 font-light">— Private Equity Intern</span></h3>
+                <p class="text-gray-400 mt-4 text-lg leading-relaxed">Constructed LBO and DCF models for wealth management acquisitions. Conducted due diligence on 15+ investments and co-authored memorandums for a successful $120M buyout.</p>
+            </div>
+
+            <!-- Mercedes Benz -->
+            <div class="relative pl-8 md:pl-0 reveal">
+                <div class="md:hidden absolute w-3 h-3 bg-gray-600 rounded-full -left-[6px] top-2"></div>
+                <p class="text-gray-500 font-mono text-sm mb-2">Aug 2022 — Jun 2023 | Bangalore, India</p>
+                <h3 class="text-3xl font-bold">Mercedes-Benz R&D <span class="text-gray-500 font-light">— Consultant (Data Scientist)</span></h3>
+                <p class="text-gray-400 mt-4 text-lg leading-relaxed">Deployed AI battery degradation prediction models on 1M+ data points, boosting EV forecast accuracy by 25%. Reduced false maintenance alerts by 75%, saving 1,000+ service hours.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-gray-900">
-        <a href="https://www.linkedin.com/in/abhishikat" class="text-gray-500 hover:text-white transition">LinkedIn</a>
-        <span class="mx-4 text-gray-800">•</span>
-        <a href="mailto:abhishikatsoni@gmail.com" class="text-gray-500 hover:text-white transition">Email</a>
+    <!-- Consulting & Projects -->
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto bg-[#0a0a0c] rounded-[3rem]">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gradient-blue reveal">Consulting & Academic Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Siemens -->
+            <div class="glass-card p-10 rounded-3xl reveal">
+                <h3 class="text-2xl font-bold mb-2">Siemens</h3>
+                <p class="text-sm text-blue-400 font-mono mb-6">Student Consultant | Dec 2024 - Jan 2025</p>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li>• Analyzed 30+ surveys & 18 interviews to assess SieSales CRM adoption gaps.</li>
+                    <li>• Evaluated CRM trends (70% usage) to uncover integration inefficiencies.</li>
+                    <li>• Developed a 4-step digital transformation roadmap for sales process standardization.</li>
+                </ul>
+            </div>
+            <!-- JHU Hospital -->
+            <div class="glass-card p-10 rounded-3xl reveal">
+                <h3 class="text-2xl font-bold mb-2">Johns Hopkins Hospital</h3>
+                <p class="text-sm text-purple-400 font-mono mb-6">Student Consultant | Sep 2023 - Nov 2023</p>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li>• Increased OR efficiency by 30% via a Python/R data-driven scheduling system.</li>
+                    <li>• Facilitated stakeholder policy updates to optimize turnover times.</li>
+                    <li>• Achieved a massive 280% increase in reported utilization.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Publications -->
+    <section id="education" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div class="reveal">
+                <h2 class="text-3xl font-bold mb-8 text-gradient">Education</h2>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold">Johns Hopkins University</h3>
+                    <p class="text-blue-400 text-sm">MS in Engineering Management (2023 - 2024)</p>
+                    <p class="text-gray-400 mt-2 text-sm">Coursework: AI, Cloud Computing, Agile, Product Management, HCI.</p>
+                    <p class="text-gray-500 mt-2 text-sm italic">*Served as TA for 10+ graduate courses.*</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold">BMS College of Engineering</h3>
+                    <p class="text-gray-400 text-sm">BE in Computer Science (2018 - 2022)</p>
+                    <p class="text-gray-400 mt-2 text-sm">Vice President & Head of R&D, CS Department.</p>
+                </div>
+            </div>
+            <div class="reveal">
+                <h2 class="text-3xl font-bold mb-8 text-gradient">Publications</h2>
+                <a href="https://www.ijsr.net/getabstract.php?paperid=SR22713132947" target="_blank" class="block glass-card p-6 rounded-2xl hover:bg-white/5 transition">
+                    <h3 class="text-lg font-bold text-white mb-2">A Survey and High Level Design on Human Activity Recognition</h3>
+                    <p class="text-sm text-blue-400 mb-4">International Journal of Science and Research</p>
+                    <span class="text-xs font-mono text-gray-500">Read Paper <i class="fas fa-arrow-right ml-1"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center border-t border-gray-900 mt-20">
+        <p class="text-gray-600 text-sm mb-4">&copy; 2026 Abhishikat Kumar Soni. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/abhishikat" class="text-gray-500 hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="mailto:abhishikatsoni@gmail.com" class="text-gray-500 hover:text-white transition"><i class="fas fa-envelope text-xl"></i></a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
