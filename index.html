@@ -1,464 +1,101 @@
 <!DOCTYPE html>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="theme-color" content="#070A12" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Abhishikat Kumar Soni | Engineering Analyst&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Abhishikat Kumar Soni — Engineering Analyst (Computer Systems Analyst) in Trust &amp; Safety / Ads Integrity. Portfolio, experience, education, skills, and contact." /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="robots" content="index, follow" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Open Graph --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:title" content="Abhishikat Kumar Soni | Engineering Analyst" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:description" content="Trust &amp; Safety • Ads Integrity • Systems &amp; Analytics • Python • SQL" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:type" content="website" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:image" content="assets/og-image.png" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:url" content="" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Twitter --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:card" content="summary_large_image" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="icon" href="assets/favicon.png" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="styles.css" /&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Ambient canvas layers --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;canvas id="stars" aria-hidden="true"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;canvas id="particles" aria-hidden="true"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Top progress --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="scrollProgress" aria-hidden="true"&gt;&lt;span id="scrollBar"&gt;&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Navbar --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="navWrap" id="top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="brand" href="#top" aria-label="Go to top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="brandMark" aria-hidden="true"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="brandText"&gt;Abhishikat&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="navToggle" id="navToggle" aria-label="Open menu" aria-expanded="false"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="navLinks" id="navLinks" role="navigation" aria-label="Primary"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#work"&gt;Work&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#impact"&gt;Impact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#skills"&gt;Skills&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#education"&gt;Education&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#publication"&gt;Publication&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#contact" class="pill"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Hero --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="page"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="heroGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="heroLeft reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kicker"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="dot"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Engineering Analyst • Trust &amp; Safety • Ads Integrity&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1 class="headline"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Systems, analytics, and &lt;span class="gradientText"&gt;abuse detection&lt;/span&gt; — built with precision.</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="subhead"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>I architect data-driven workflows for detecting and mitigating invalid traffic &amp; AdSpam, translate policy into</p>
-<p class="p1"><span class="Apple-converted-space">            </span>technical specs, and improve operational reliability at enterprise scale.</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="heroMeta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metaCard glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaLabel"&gt;Location&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaValue"&gt;Austin, TX&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metaCard glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaLabel"&gt;Now&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaValue"&gt;Google • Ads Integrity&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metaCard glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaLabel"&gt;Focus&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="metaValue"&gt;Systems • SQL • Python&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="ctaRow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn primary" href="#work"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Explore work&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M13 5l7 7-7 7M4 12h15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn" href="#contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;Let’s talk&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M4 4h16v16H4z" fill="none"/&gt;&lt;path d="M4 8l8 5 8-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn ghost" href="https://www.linkedin.com/in/abhishikat" target="_blank" rel="noreferrer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;span&gt;LinkedIn&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M14 3h7v7M10 14L21 3M21 14v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="signalRow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="signal glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="signalTitle"&gt;Core strengths&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="chips"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;System design&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Operational analytics&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Abuse / policy translation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Documentation &amp; SOPs&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="chip"&gt;Production support&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="heroRight reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="orbWrap glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="orb"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="orbInner"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="orbGlow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="statGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statNum"&gt;&lt;span data-count="1000000"&gt;1,000,000&lt;/span&gt;+&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statLabel"&gt;Data points processed&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statNum"&gt;&lt;span data-count="25"&gt;25&lt;/span&gt;%&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statLabel"&gt;Accuracy uplift (EV model)&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statNum"&gt;&lt;span data-count="40"&gt;40&lt;/span&gt;%&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statLabel"&gt;Defects reduced&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="stat glass"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statNum"&gt;&lt;span data-count="2.3"&gt;2.3&lt;/span&gt;×&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="statLabel"&gt;Evaluation throughput&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="miniTerminal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="termTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="tDot red"&gt;&lt;/span&gt;&lt;span class="tDot yellow"&gt;&lt;/span&gt;&lt;span class="tDot green"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="termTitle"&gt;ads-integrity / insight&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;pre class="termBody" aria-label="Decorative terminal"&gt;</p>
-<p class="p1">&lt;span class="muted"&gt;$&lt;/span&gt; run trust_safety.audit --scope=ads --signal=ivt</p>
-<p class="p1">&lt;span class="muted"&gt;→&lt;/span&gt; detect: rules_engine ✓<span class="Apple-converted-space">  </span>scoring ✓<span class="Apple-converted-space">  </span>alerting ✓</p>
-<p class="p1">&lt;span class="muted"&gt;→&lt;/span&gt; metrics: precision ↑<span class="Apple-converted-space">  </span>latency ↓<span class="Apple-converted-space">  </span>coverage ↑</p>
-<p class="p1">&lt;span class="muted"&gt;→&lt;/span&gt; output: hardened workflows + clear SOPs</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;/pre&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="scrollHint" href="#work" aria-label="Scroll to work section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="mouse" aria-hidden="true"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scrollText"&gt;Scroll&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Work --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="work" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Work&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;High-impact roles across Ads Integrity, teaching, and applied ML.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="card glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cardTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;Google&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="role"&gt;Engineering Analyst (Computer Systems Analyst) • Jan 2026 – Present • Austin, TX&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Trust &amp; Safety&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Architected enterprise-scale systems to detect and mitigate invalid traffic &amp; AdSpam, improving reliability and reducing advertiser risk.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Designed and continuously tuned workflows (rules engines, alerting logic, scoring frameworks, integrations) to improve detection accuracy and performance.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Translated ambiguous abuse + policy requirements into functional/technical specs and guided implementation, integration testing, and phased rollouts.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Led operational metric analyses (SQL + internal reporting) to remove bottlenecks, increase analyst throughput, and reduce incident resolution time.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Owned SOPs, documentation, and incident-response workflows, aligning stakeholders across Product, Sales, Legal, and compliance needs.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Provided production support and on-call coverage; led RCA for critical incidents and drove durable remediations.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="card glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cardTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;Johns Hopkins University&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="role"&gt;Teaching Assistant (Part-time) • Jan 2024 – Dec 2025 • Baltimore, MD &amp; Newark, NJ&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Academia&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;TA for 10+ graduate courses including Statistical Analysis, ERM, Python Programming, Algorithms, Software Project Management, and more.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Led discussion support, grading, rubrics, and structured feedback across quantitative, programming, and business analytics coursework.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Mentored graduate students in analytics, risk, finance, marketing strategy, software development, and algorithmic problem-solving.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="card glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cardTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;Taboola&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="role"&gt;QA Tester (Data Science/Engineering) • Sep 2025 – Jan 2026 • New York, NY&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;ML Quality&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Built automated data validation pipelines (Python, SQL) for anomaly detection across 10,000+ publisher outputs; reduced critical defects by 40%.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Developed forecasting models and KPI dashboards (Power BI, Python, SQL), cutting UAT ambiguity by 35% and improving decision latency ~40%.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Improved defect classification via feature engineering + clustering on Jira/Confluence logs; reduced issue resolution from 5 days to 2 days.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Used A/B testing, regression, and hypothesis testing to identify adoption drivers; increased publisher adoption by 25% and boosted retention.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="card glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cardTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;Mercedes-Benz R&amp;amp;D India&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="role"&gt;Graduate Engineer Trainee (Data Scientist) • Aug 2022 – Jun 2023 • Bangalore&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Applied ML&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Deployed an AI battery degradation prediction model (1M+ data points), improving forecasting accuracy by 25% and impacting ~$2M warranty claims.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Monitored EV performance metrics and detected critical anomalies with 92% accuracy, decreasing emergency service calls by 25%.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Refined algorithm performance to improve charge-cycle efficiency by 30% and extend fleet battery life.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Led cross-functional collaboration (8 members) and improved dashboard engagement by 30% via stronger visualization design.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Reduced false maintenance alerts by 75%, saving 1,000+ service hours and increasing operational efficiency by 20%.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="card glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="cardTop"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3&gt;Community Dreams Foundation&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="role"&gt;Project/Product Manager (Volunteer) • Jan 2025 – Oct 2025 • Remote&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;Social Impact&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="bullets"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Planned and delivered sustainability projects supporting equitable and resilient green communities.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Aligned stakeholders to define goals, prioritize initiatives, and coordinate timelines across volunteers.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Managed documentation, handover, and accountability with consistent professionalism and integrity.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Impact --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="impact" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Impact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Fast signal of outcomes, built from your work highlights.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="impactGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="impactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactIcon" aria-hidden="true"&gt;⚡&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactTitle"&gt;Quality at scale&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactText"&gt;Reduced critical defects by &lt;strong&gt;40%&lt;/strong&gt; and accelerated rollout timelines by &lt;strong&gt;3 weeks&lt;/strong&gt;.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="impactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactIcon" aria-hidden="true"&gt;📈&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactTitle"&gt;Throughput &amp; speed&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactText"&gt;Improved evaluation throughput by &lt;strong&gt;2.3×&lt;/strong&gt; and cut average issue resolution from &lt;strong&gt;5 → 2 days&lt;/strong&gt;.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="impactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactIcon" aria-hidden="true"&gt;🧠&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactTitle"&gt;Applied ML outcomes&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactText"&gt;Delivered &lt;strong&gt;25%&lt;/strong&gt; accuracy uplift on EV forecasting and achieved &lt;strong&gt;92%&lt;/strong&gt; anomaly detection accuracy.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="impactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactIcon" aria-hidden="true"&gt;🛡️&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactTitle"&gt;Integrity systems&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="impactText"&gt;Designed detection workflows and SOPs that strengthen reliability, compliance alignment, and incident response readiness.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Skills --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="skills" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Skills&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;A focused, readable view of your toolset.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skillGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skillCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Core&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chips"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Python&lt;/span&gt;&lt;span class="chip"&gt;SQL&lt;/span&gt;&lt;span class="chip"&gt;System Design&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Abuse Detection&lt;/span&gt;&lt;span class="chip"&gt;Process Automation&lt;/span&gt;&lt;span class="chip"&gt;Troubleshooting&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Production Support&lt;/span&gt;&lt;span class="chip"&gt;Documentation&lt;/span&gt;&lt;span class="chip"&gt;SLAs&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skillCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Data &amp; ML&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chips"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;NumPy&lt;/span&gt;&lt;span class="chip"&gt;Pandas&lt;/span&gt;&lt;span class="chip"&gt;scikit-learn&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Keras&lt;/span&gt;&lt;span class="chip"&gt;XGBoost&lt;/span&gt;&lt;span class="chip"&gt;Statsmodels&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;NLP (spaCy / NLTK)&lt;/span&gt;&lt;span class="chip"&gt;Hugging Face&lt;/span&gt;&lt;span class="chip"&gt;A/B Testing&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skillCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Cloud &amp; Platforms&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chips"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;AWS&lt;/span&gt;&lt;span class="chip"&gt;Google Cloud&lt;/span&gt;&lt;span class="chip"&gt;Azure ML&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Databricks&lt;/span&gt;&lt;span class="chip"&gt;Snowflake&lt;/span&gt;&lt;span class="chip"&gt;BigQuery&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Hadoop / Hive&lt;/span&gt;&lt;span class="chip"&gt;Redshift&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skillCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Engineering&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="chips"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;Java&lt;/span&gt;&lt;span class="chip"&gt;C++&lt;/span&gt;&lt;span class="chip"&gt;Scala&lt;/span&gt;&lt;span class="chip"&gt;NoSQL&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;REST APIs&lt;/span&gt;&lt;span class="chip"&gt;Flask&lt;/span&gt;&lt;span class="chip"&gt;FastAPI&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="chip"&gt;GitHub&lt;/span&gt;&lt;span class="chip"&gt;GitLab&lt;/span&gt;&lt;span class="chip"&gt;Power BI&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Education --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="education" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Education&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Academic foundation with engineering + management depth.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tItem glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tWhen"&gt;Aug 2023 – Dec 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tWhat"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Johns Hopkins University&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tRole"&gt;M.S. in Engineering Management • Baltimore, MD&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tSmall"&gt;Coursework: AI, Cloud Computing, Agile, Product Management, HCI, Managing People &amp; Conflicts, and more.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="tItem glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tWhen"&gt;Jul 2018 – Aug 2022&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tWhat"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;BMS College of Engineering&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tRole"&gt;B.E. in Computer Science and Engineering • Bangalore, India&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tSmall"&gt;Leadership: Vice President &amp; Head of R&amp;amp;D (CS Dept). Coursework: ML, Big Data, Cryptography, Algorithms, DBMS, and more.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Publication --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="publication" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Publication&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Research and writing.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pub glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pubLeft"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="pubTitle"&gt;A Survey and High Level Design on Human Activity Recognition&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="pubMeta"&gt;International Journal of Science and Research&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn small" href="https://www.ijsr.net/getabstract.php?paperid=SR22713132947" target="_blank" rel="noreferrer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>View</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M14 3h7v7M10 14L21 3M21 14v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Contact --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sectionHead reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Open to collaboration, systems design discussions, and impact-focused work.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="contactGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Reach me&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contactLine"&gt;&lt;span class="label"&gt;Email&lt;/span&gt; &lt;a href="mailto:abhishikatsoni@gmail.com"&gt;abhishikatsoni@gmail.com&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contactLine"&gt;&lt;span class="label"&gt;Phone&lt;/span&gt; &lt;a href="tel:+16676579129"&gt;+1 (667) 657-9129&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contactLine"&gt;&lt;span class="label"&gt;LinkedIn&lt;/span&gt; &lt;a href="https://www.linkedin.com/in/abhishikat" target="_blank" rel="noreferrer"&gt;linkedin.com/in/abhishikat&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contactLine"&gt;&lt;span class="label"&gt;Location&lt;/span&gt; Austin, TX&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="ctaRow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn primary" href="mailto:abhishikatsoni@gmail.com?subject=Hello%20Abhishikat%20—%20Let%27s%20connect"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>Email me</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M4 8l8 5 8-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" id="copyEmail"&gt;Copy email&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="toast" id="toast" role="status" aria-live="polite"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contactCard glass reveal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;One-line bio&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="mono"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Engineering Analyst in Trust &amp;amp; Safety / Ads Integrity — building reliable, data-driven detection systems and operational workflows.</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Quick links&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="quickLinks"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="qLink" href="#work"&gt;Work&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="qLink" href="#skills"&gt;Skills&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="qLink" href="#education"&gt;Education&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="qLink" href="#publication"&gt;Publication&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;footer class="footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footerLeft"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;© &lt;span id="year"&gt;&lt;/span&gt; Abhishikat Kumar Soni&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="sep"&gt;•&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="muted"&gt;Built for speed, accessibility, and “wow”.&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="toTop" href="#top" aria-label="Back to top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Back to top</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Structured data --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="application/ld+json"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>{</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"@context": "https://schema.org",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"@type": "Person",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"name": "Abhishikat Kumar Soni",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"email": "mailto:abhishikatsoni@gmail.com",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"telephone": "+1-667-657-9129",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"homeLocation": "Austin, TX",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"url": "",</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"sameAs": ["https://www.linkedin.com/in/abhishikat"],</p>
-<p class="p1"><span class="Apple-converted-space">    </span>"jobTitle": "Engineering Analyst (Computer Systems Analyst)"</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="app.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishikat Kumar Soni | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --apple-bg: #000000; --apple-card: #1c1c1e; }
+        body { background-color: var(--apple-bg); overflow-x: hidden; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass-card { background: rgba(28, 28, 30, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease; }
+        .glass-card:hover { transform: scale(1.02); }
+        .text-gradient { background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="text-white font-sans antialiased">
+
+    <!-- Navbar (Fixed) -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-none h-12 flex items-center justify-center space-x-8 text-xs font-light text-gray-400">
+        <a href="#hero" class="hover:text-white transition">Intro</a>
+        <a href="#stats" class="hover:text-white transition">Impact</a>
+        <a href="#experience" class="hover:text-white transition">Experience</a>
+        <a href="mailto:abhishikatsoni@gmail.com" class="hover:text-white transition underline">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <h2 class="text-blue-500 font-semibold tracking-widest uppercase text-sm mb-4 reveal">Engineering Consultant @ Google</h2>
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tight text-gradient reveal">Abhishikat Kumar Soni.</h1>
+        <p class="text-xl md:text-3xl text-gray-400 mt-6 max-w-3xl reveal">Data Scientist. Private Equity Strategist. <br>Building the future at the intersection of AI and Finance.</p>
+    </section>
+
+    <!-- Bento Grid (Skills/Stats) -->
+    <section id="stats" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+            <!-- Radar Chart Card -->
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal">
+                <h3 class="text-gray-400 text-sm font-medium mb-4 uppercase">Core Capabilities</h3>
+                <div class="h-full w-full flex items-center justify-center">
+                    <canvas id="skillsRadar"></canvas>
+                </div>
+            </div>
+            <!-- Rapid Stats Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal">
+                <h3 class="text-gray-400 text-sm font-medium uppercase">Performance</h3>
+                <div>
+                    <span class="text-6xl font-bold text-blue-500">280%</span>
+                    <p class="text-gray-400 mt-2">Utilization increase at Johns Hopkins Hospital</p>
+                </div>
+            </div>
+            <!-- Secondary Stats -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal">
+                <h3 class="text-gray-400 text-sm font-medium uppercase">Efficiency</h3>
+                <div>
+                    <span class="text-6xl font-bold text-purple-500">40%</span>
+                    <p class="text-gray-400 mt-2">Reduction in critical defects at Taboola</p>
+                </div>
+            </div>
+            <!-- Experience Distribution -->
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal">
+                <h3 class="text-gray-400 text-sm font-medium mb-4 uppercase">Project Outcomes</h3>
+                <canvas id="impactBar"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline (High Contrast) -->
+    <section id="experience" class="py-32 px-6 max-w-4xl mx-auto">
+        <h2 class="text-5xl font-bold mb-20 text-gradient reveal">Career Evolution</h2>
+        <div class="space-y-24">
+            <div class="reveal">
+                <span class="text-blue-500 font-mono text-sm">2026 — PRESENT</span>
+                <h3 class="text-3xl font-bold mt-2">Google — Engineering Consultant</h3>
+                <p class="text-gray-400 mt-4 leading-relaxed text-lg">Leading rapid-response technical investigations into zero-day malware. Coordinating directly with Product and Policy teams to deploy global countermeasures.</p>
+            </div>
+            <div class="reveal">
+                <span class="text-purple-500 font-mono text-sm">2025 — 2026</span>
+                <h3 class="text-3xl font-bold mt-2">Taboola — DS Consultant</h3>
+                <p class="text-gray-400 mt-4 leading-relaxed text-lg">Engineered automated data validation pipelines. Improved model evaluation throughput by 2.3× and saved $50K+ in annual QA costs.</p>
+            </div>
+            <div class="reveal">
+                <span class="text-gray-500 font-mono text-sm">2022 — 2023</span>
+                <h3 class="text-3xl font-bold mt-2">Mercedes-Benz — Data Scientist</h3>
+                <p class="text-gray-400 mt-4 leading-relaxed text-lg">AI-powered battery degradation modeling. Predicted EV battery life with 92% accuracy, driving $2M in savings.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-gray-900">
+        <a href="https://www.linkedin.com/in/abhishikat" class="text-gray-500 hover:text-white transition">LinkedIn</a>
+        <span class="mx-4 text-gray-800">•</span>
+        <a href="mailto:abhishikatsoni@gmail.com" class="text-gray-500 hover:text-white transition">Email</a>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
