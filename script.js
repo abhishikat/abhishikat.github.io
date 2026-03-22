@@ -1,68 +1,86 @@
-// Intersection Observer for Scroll Animations
+// 1. Apple-Style Scroll Reveal Animation
 const observerOptions = {
-    threshold: 0.1
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Only animate once
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
 
-// Charts Configuration
-const chartDefaults = {
-    color: '#a1a1a6',
-    font: { family: 'SF Pro Display, system-ui, sans-serif' }
-};
+// Chart.js Global Settings for Dark Mode
+Chart.defaults.color = '#86868b';
+Chart.defaults.font.family = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
 
-// Radar Chart
-new Chart(document.getElementById('skillsRadar'), {
+// 2. Radar Chart: Core Competencies
+const ctxRadar = document.getElementById('skillsRadar').getContext('2d');
+new Chart(ctxRadar, {
     type: 'radar',
     data: {
-        labels: ['AI/GenAI', 'Cloud Eng', 'Financial Modeling', 'Data Science', 'Product Mgmt', 'Security'],
+        labels: ['AI / Machine Learning', 'Cloud & Data Eng', 'Financial Modeling', 'Backend Dev', 'Product Management', 'Data Analytics'],
         datasets: [{
-            data: [95, 88, 85, 92, 80, 90],
-            backgroundColor: 'rgba(59, 130, 246, 0.2)',
-            borderColor: '#3b82f6',
+            data: [95, 88, 85, 90, 80, 92],
+            backgroundColor: 'rgba(41, 151, 255, 0.15)', // Apple Blue tinted
+            borderColor: '#2997ff',
             borderWidth: 2,
-            pointRadius: 0
+            pointBackgroundColor: '#ffffff',
+            pointBorderColor: '#2997ff',
+            pointRadius: 3,
+            pointHoverRadius: 6
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
             r: {
-                grid: { color: 'rgba(255,255,255,0.05)' },
-                angleLines: { color: 'rgba(255,255,255,0.05)' },
-                pointLabels: { color: '#a1a1a6', font: { size: 11 } },
-                ticks: { display: false }
+                angleLines: { color: 'rgba(255, 255, 255, 0.05)' },
+                grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                pointLabels: { color: '#ffffff', font: { size: 11, weight: '500' } },
+                ticks: { display: false, max: 100, min: 0 }
             }
         },
-        plugins: { legend: { display: false } }
+        plugins: { legend: { display: false }, tooltip: { enabled: true } }
     }
 });
 
-// Bar Chart
-new Chart(document.getElementById('impactBar'), {
-    type: 'bar',
+// 3. Doughnut Chart: Technology Distribution
+const ctxDoughnut = document.getElementById('techDoughnut').getContext('2d');
+new Chart(ctxDoughnut, {
+    type: 'doughnut',
     data: {
-        labels: ['Accuracy Boost', 'QA Savings ($)', 'Client Retention', 'Latency Improvement'],
+        labels: ['Python/ML Ecosystem', 'Cloud (AWS/GCP/Azure)', 'Data Engineering (SQL/BigQuery)', 'Software Dev (Java/C++)'],
         datasets: [{
-            data: [25, 50, 25, 40],
-            backgroundColor: ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981'],
-            borderRadius: 20,
-            barThickness: 12
+            data: [40, 25, 20, 15],
+            backgroundColor: [
+                '#2997ff', // Blue
+                '#a252fa', // Purple
+                '#ff3b30', // Red
+                '#34c759'  // Green
+            ],
+            borderWidth: 0,
+            hoverOffset: 10
         }]
     },
     options: {
-        indexAxis: 'y',
-        scales: {
-            x: { display: false },
-            y: { grid: { display: false }, ticks: { color: '#a1a1a6' } }
-        },
-        plugins: { legend: { display: false } }
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '75%',
+        plugins: {
+            legend: { 
+                position: 'right',
+                labels: { color: '#86868b', usePointStyle: true, padding: 20 }
+            }
+        }
     }
 });
