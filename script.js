@@ -1,86 +1,36 @@
-// 1. Apple-Style Scroll Reveal Animation
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Only animate once
-        }
-    });
-}, observerOptions);
+// Initialize dynamic charts using Chart.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
-
-// Chart.js Global Settings for Dark Mode
-Chart.defaults.color = '#86868b';
-Chart.defaults.font.family = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-
-// 2. Radar Chart: Core Competencies
-const ctxRadar = document.getElementById('skillsRadar').getContext('2d');
-new Chart(ctxRadar, {
-    type: 'radar',
-    data: {
-        labels: ['AI / Machine Learning', 'Cloud & Data Eng', 'Financial Modeling', 'Backend Dev', 'Product Management', 'Data Analytics'],
-        datasets: [{
-            data: [95, 88, 85, 90, 80, 92],
-            backgroundColor: 'rgba(41, 151, 255, 0.15)', // Apple Blue tinted
-            borderColor: '#2997ff',
-            borderWidth: 2,
-            pointBackgroundColor: '#ffffff',
-            pointBorderColor: '#2997ff',
-            pointRadius: 3,
-            pointHoverRadius: 6
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            r: {
-                angleLines: { color: 'rgba(255, 255, 255, 0.05)' },
-                grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                pointLabels: { color: '#ffffff', font: { size: 11, weight: '500' } },
-                ticks: { display: false, max: 100, min: 0 }
-            }
+    // 1. Radar Chart (Technical Proficiency)
+    const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(skillsCtx, {
+        type: 'radar',
+        data: {
+            labels: ['AI / Gen AI/ML', 'Cloud Architecture', 'Data Engineering', 'Financial Modeling', 'Backend Development'],
+            datasets: [{
+                label: 'Proficiency Level',
+                data: [90, 85, 95, 75, 80],
+                fill: true,
+                backgroundColor: 'rgba(59, 130, 246, 0.2)', // Light blue fill
+                borderColor: 'rgb(59, 130, 246)', // Blue line
+                pointBackgroundColor: 'rgb(59, 130, 246)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(59, 130, 246)'
+            }]
         },
-        plugins: { legend: { display: false }, tooltip: { enabled: true } }
-    }
-});
-
-// 3. Doughnut Chart: Technology Distribution
-const ctxDoughnut = document.getElementById('techDoughnut').getContext('2d');
-new Chart(ctxDoughnut, {
-    type: 'doughnut',
-    data: {
-        labels: ['Python/ML Ecosystem', 'Cloud (AWS/GCP/Azure)', 'Data Engineering (SQL/BigQuery)', 'Software Dev (Java/C++)'],
-        datasets: [{
-            data: [40, 25, 20, 15],
-            backgroundColor: [
-                '#2997ff', // Blue
-                '#a252fa', // Purple
-                '#ff3b30', // Red
-                '#34c759'  // Green
-            ],
-            borderWidth: 0,
-            hoverOffset: 10
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '75%',
-        plugins: {
-            legend: { 
-                position: 'right',
-                labels: { color: '#86868b', usePointStyle: true, padding: 20 }
+        options: {
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(255,255,255,0.1)' },
+                    grid: { color: 'rgba(255,255,255,0.1)' },
+                    pointLabels: { color: '#a1a1aa' },
+                    ticks: { display: false }
+                }
+            },
+            plugins: {
+                legend: { display: false } // Hide the default legend for a cleaner look
             }
         }
-    }
+    });
 });
