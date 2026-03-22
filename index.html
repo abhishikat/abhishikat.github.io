@@ -1,169 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishikat Kumar Soni | Digital Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Abhishikat Soni | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white font-sans antialiased">
+<body class="bg-[#050505] text-slate-200 font-sans antialiased selection:bg-cyan-500/30">
 
-    <header class="fixed-nav z-50">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-gray-400">
-            <h1 class="text-lg font-bold text-white tracking-tighter">ABHISHIKAT SONI</h1>
-            <div class="flex space-x-6">
-                <a href="#hero" class="hover:text-white transition">Intro</a>
-                <a href="#experience" class="hover:text-white transition">Experience</a>
-                <a href="#visuals" class="hover:text-white transition">Impact</a>
-                <a href="#projects" class="hover:text-white transition">Projects</a>
-                <a href="mailto:abhishikatsoni@gmail.com" class="text-blue-400 hover:text-blue-300 transition">Contact</a>
+    <!-- Hero Section (Full Bleed) -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Stable High-Quality Background Image -->
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2500&q=80" alt="Cyber Security Data" class="absolute inset-0 w-full h-full object-cover opacity-20 scale-105 animate-slow-pan">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/80 to-[#050505]"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <p class="text-cyan-400 font-mono text-sm md:text-base tracking-widest uppercase mb-6 slide-up">System Online // Austin, TX</p>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-slate-600 slide-up delay-100">
+                ABHISHIKAT
+            </h1>
+            <p class="text-xl md:text-3xl text-slate-400 font-light slide-up delay-200">
+                Engineering Consultant @ <span class="text-white font-bold">Google</span>
+            </p>
+            <div class="mt-12 slide-up delay-300">
+                <a href="#experience" class="text-cyan-400 border border-cyan-400/30 px-8 py-4 rounded-full hover:bg-cyan-400/10 transition duration-300 uppercase tracking-widest text-xs font-bold">Explore Trajectory</a>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <section id="hero" class="hero-section flex flex-col justify-center items-center text-center px-6">
-        <div class="hero-bg-overlay"></div>
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070" alt="Background Network Visual" class="hero-bg-image">
+    <!-- Impact Metrics (Giant Typography) -->
+    <section class="py-32 px-6 bg-[#050505] relative z-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-sm font-mono text-slate-500 uppercase tracking-widest mb-16 border-l-2 border-cyan-500 pl-4">Quantifiable Impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="border-t border-slate-800 pt-8 reveal">
+                    <h3 class="text-7xl font-black text-white mb-2">$120<span class="text-cyan-500">M</span></h3>
+                    <p class="text-slate-400">Mid-market buyout modeled and supported at Silver Alpine Capital.</p>
+                </div>
+                <div class="border-t border-slate-800 pt-8 reveal">
+                    <h3 class="text-7xl font-black text-white mb-2">280<span class="text-cyan-500">%</span></h3>
+                    <p class="text-slate-400">Utilization increase achieved at Johns Hopkins Hospital via data models.</p>
+                </div>
+                <div class="border-t border-slate-800 pt-8 reveal">
+                    <h3 class="text-7xl font-black text-white mb-2">2.3<span class="text-cyan-500">x</span></h3>
+                    <p class="text-slate-400">Model evaluation throughput scaling achieved at Taboola.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Unique Sticky Scroll Experience Section -->
+    <section id="experience" class="relative">
         
-        <div class="hero-content relative z-10 reveal">
-            <p class="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4">Engineering Consultant @ Google</p>
-            <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-gradient leading-tight">Abhishikat Kumar Soni.</h2>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed">Leveraging MS in Engineering Management from Johns Hopkins to bridge the gap between AI, Data Science, and Strategic Finance.</p>
-            
-            <div class="mt-12 flex space-x-6 justify-center text-sm font-semibold">
-                <a href="mailto:abhishikatsoni@gmail.com" class="apple-btn bg-white text-black">Contact Me</a>
-                <a href="https://www.linkedin.com/in/abhishikat" target="_blank" class="apple-btn-secondary text-white">LinkedIn Profile <i class="fas fa-arrow-right ml-1"></i></a>
+        <!-- Job 1: Google -->
+        <div class="min-h-screen flex flex-col md:flex-row relative">
+            <div class="md:w-1/2 md:sticky md:top-0 h-[50vh] md:h-screen overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1531297172867-4b44c36d1b28?auto=format&fit=crop&w=1500&q=80" alt="Tech Architecture" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#050505]"></div>
+            </div>
+            <div class="md:w-1/2 flex items-center p-12 md:p-24 bg-[#050505]">
+                <div class="max-w-xl reveal">
+                    <p class="font-mono text-cyan-400 mb-4">01 // Jan 2026 - Present</p>
+                    <h2 class="text-5xl font-black mb-6">Google</h2>
+                    <h3 class="text-2xl text-slate-300 mb-6">Engineering Consultant</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed">Spearheading rapid-response technical investigations into zero-day malware and bad-actor campaigns. Coordinating directly with Product, Policy, and Engineering teams to deploy system-wide countermeasures within a critical 24-hour window.</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section id="visuals" class="py-32 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-black mb-16 tracking-tight reveal">Impact & Expertise Visualization.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] reveal">
-            
-            <div class="md:col-span-2 glass-card rounded-3xl p-8 flex flex-col">
-                <h3 class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Domain Proficiency</h3>
-                <div class="flex-grow flex items-center justify-center">
-                    <canvas id="skillsRadarChart"></canvas>
+        <!-- Job 2: Taboola -->
+        <div class="min-h-screen flex flex-col md:flex-row-reverse relative">
+            <div class="md:w-1/2 md:sticky md:top-0 h-[50vh] md:h-screen overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1500&q=80" alt="Data Science Analytics" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#050505]"></div>
+            </div>
+            <div class="md:w-1/2 flex items-center p-12 md:p-24 bg-[#050505]">
+                <div class="max-w-xl reveal">
+                    <p class="font-mono text-purple-400 mb-4">02 // Sep 2025 - Jan 2026</p>
+                    <h2 class="text-5xl font-black mb-6">Taboola</h2>
+                    <h3 class="text-2xl text-slate-300 mb-6">DS / Eng Consultant</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed">Engineered automated data validation pipelines in Python and SQL across 10,000+ publisher outputs. Reduced critical defects by 40%, accelerated rollouts by 3 weeks, and optimized root-cause analytics using clustering algorithms.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="glass-card rounded-3xl relative overflow-hidden flex flex-col justify-end p-8 group">
-                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=600" alt="EV charging" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500">
-                <div class="relative z-10">
-                    <span class="text-6xl font-black text-green-400">$2M</span>
-                    <p class="text-sm text-gray-300 mt-2">Saved in warranty claims at Mercedes-Benz via AI forecasting.</p>
-                </div>
+        <!-- Job 3: Mercedes-Benz -->
+        <div class="min-h-screen flex flex-col md:flex-row relative">
+            <div class="md:w-1/2 md:sticky md:top-0 h-[50vh] md:h-screen overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1500&q=80" alt="EV Engineering" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#050505]"></div>
             </div>
-
-            <div class="glass-card rounded-3xl relative overflow-hidden flex flex-col justify-end p-8 group">
-                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600" alt="Hospital Lab" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500">
-                <div class="relative z-10">
-                    <span class="text-6xl font-black text-blue-400">280%</span>
-                    <p class="text-sm text-gray-300 mt-2">Increase in reported utilization at Johns Hopkins Hospital.</p>
-                </div>
-            </div>
-
-            <div class="md:col-span-2 glass-card rounded-3xl p-8 flex flex-col">
-                <h3 class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Technology Focus</h3>
-                <div class="flex-grow flex items-center justify-center">
-                    <canvas id="techDoughnutChart"></canvas>
-                </div>
-            </div>
-
-            <div class="md:col-span-2 glass-card rounded-3xl relative overflow-hidden p-8 group flex items-center">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" alt="Financial Data Analytics" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-500">
-                <div class="relative z-10 max-w-xl">
-                    <span class="text-6xl font-black text-white">$120M</span>
-                    <p class="text-lg text-gray-300 mt-2">Successful buyout of an asset management firm supported by rigorous DCF/LBO modeling at Silver Alpine Capital.</p>
+            <div class="md:w-1/2 flex items-center p-12 md:p-24 bg-[#050505]">
+                <div class="max-w-xl reveal">
+                    <p class="font-mono text-green-400 mb-4">03 // Aug 2022 - Jun 2023</p>
+                    <h2 class="text-5xl font-black mb-6">Mercedes-Benz R&D</h2>
+                    <h3 class="text-2xl text-slate-300 mb-6">Data Scientist</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed">Developed AI-powered battery degradation prediction models. Processed over 1M data points to achieve a 25% enhancement in EV forecast accuracy, directly generating $2M in warranty claim savings and reducing false maintenance alerts by 75%.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-32 px-6 max-w-5xl mx-auto">
-        <h2 class="text-4xl font-black mb-20 tracking-tight reveal">Professional Narrative.</h2>
-        <div class="space-y-16">
-            
-            <div class="experience-card glass-card rounded-3xl overflow-hidden reveal group">
-                <div class="flex flex-col md:flex-row h-full">
-                    <img src="https://images.unsplash.com/photo-1573496546038-1d3a70212030?q=80&w=600" alt="Google Austin style Office" class="w-full md:w-2/5 h-64 md:h-full object-cover">
-                    <div class="p-10 flex-grow">
-                        <span class="text-sm font-mono text-blue-400">Jan 2026 — Present | Austin, TX</span>
-                        <h3 class="text-3xl font-bold mt-2 text-white">Engineering Consultant @ Google</h3>
-                        <p class="text-gray-400 mt-6 leading-relaxed">Working on rapid-response technical investigations into zero-day malware and bad-actor campaigns, deploying system-wide countermeasures within 24 hours.</p>
+    <!-- Technical Arsenal (Charts) -->
+    <section class="py-32 px-6 bg-[#0a0a0a] border-t border-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-sm font-mono text-slate-500 uppercase tracking-widest mb-16 border-l-2 border-cyan-500 pl-4">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 reveal">
+                <div class="bg-[#111] p-10 rounded-2xl border border-slate-800 h-[400px]">
+                    <canvas id="skillsRadar"></canvas>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-6">Core Stack</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">Python</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">AWS / GCP</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">SQL / NoSQL</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">Scikit-learn</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">XGBoost</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">REST APIs</span>
+                        <span class="px-4 py-2 bg-slate-800 text-slate-300 text-sm rounded-md font-mono">LBO/DCF Modeling</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="experience-card glass-card rounded-3xl overflow-hidden reveal group">
-                <div class="flex flex-col md:flex-row-reverse h-full">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b0cd?q=80&w=600" alt="Lecture Hall Academic Setting" class="w-full md:w-2/5 h-64 md:h-full object-cover">
-                    <div class="p-10 flex-grow">
-                        <span class="text-sm font-mono text-purple-400">Jan 2024 — Dec 2025 | Academic</span>
-                        <h3 class="text-3xl font-bold mt-2 text-white">Teaching Assistant @ Johns Hopkins University</h3>
-                        <p class="text-gray-400 mt-6 leading-relaxed">Supported faculty instruction for 10+ graduate courses, spanning Data Analytics, Risk Management, Software Project Management, and Algorithms.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="experience-card glass-card rounded-3xl overflow-hidden reveal group">
-                <div class="flex flex-col md:flex-row h-full">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600" alt="Data Analytics Team" class="w-full md:w-2/5 h-64 md:h-full object-cover">
-                    <div class="p-10 flex-grow">
-                        <span class="text-sm font-mono text-pink-400">Sep 2025 — Jan 2026 | New York, NY</span>
-                        <h3 class="text-3xl font-bold mt-2 text-white">DS/Eng Consultant @ Taboola</h3>
-                        <p class="text-gray-400 mt-6 leading-relaxed">Engineered automated data validation pipelines; improved model throughput by 2.3x and saved $50K+ in annual QA costs.</p>
-                    </div>
+                    <p class="text-slate-400 mt-8">Extensive coursework and practical application in Machine Learning, Cloud Computing, System Design, and Enterprise Risk Management at Johns Hopkins University.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-32 px-6 max-w-7xl mx-auto bg-gray-950 rounded-[3rem]">
-        <h2 class="text-4xl font-black mb-16 tracking-tight text-center reveal">Projects & Research.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-            <div class="glass-card p-12 rounded-3xl relative overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=600" alt="Operating Room Efficiency" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-105 transition-transform duration-500">
-                <div class="relative z-10">
-                    <span class="text-xs font-mono text-purple-400">CONSULTING CONSULTING CONSULTING</span>
-                    <h3 class="text-2xl font-bold mt-2">JHU Hospital OR Efficiency</h3>
-                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Increased OR efficiency by 30% through Python/R data-driven block scheduling system, setting new standards for sustainable resource management.</p>
-                </div>
-            </div>
-            <a href="https://www.ijsr.net/getabstract.php?paperid=SR22713132947" target="_blank" class="glass-card p-12 rounded-3xl relative overflow-hidden group block hover:bg-gray-800 transition">
-                <img src="https://images.unsplash.com/photo-1518111979043-9844f2fb9281?q=80&w=600" alt="Human Activity Research" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-105 transition-transform duration-500">
-                <div class="relative z-10">
-                    <span class="text-xs font-mono text-gray-500">PUBLISHING PUBLISHING PUBLISHING</span>
-                    <h3 class="text-2xl font-bold mt-2">Human Activity Recognition Survey</h3>
-                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Publication detailing high-level design on HAR, International Journal of Science and Research. <i class="fas fa-external-link-alt text-xs ml-1"></i></p>
-                </div>
-            </a>
+    <!-- Footer -->
+    <footer class="py-16 text-center bg-[#050505] border-t border-slate-900">
+        <h2 class="text-3xl font-black mb-8">Ready to execute?</h2>
+        <div class="flex justify-center gap-6 mb-12">
+            <a href="mailto:abhishikatsoni@gmail.com" class="text-cyan-400 hover:text-white transition text-2xl"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/abhishikat" target="_blank" class="text-cyan-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin"></i></a>
         </div>
-    </section>
-
-    <section id="education" class="py-24 px-6 max-w-5xl mx-auto reveal">
-        <h2 class="text-3xl font-black mb-10 text-gray-500">Education</h2>
-        <div class="space-y-6">
-            <div>
-                <h4 class="text-lg font-bold">Johns Hopkins University (JHU)</h4>
-                <p class="text-gray-400 text-sm">MS in Engineering Management (2023-2024)</p>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold">BMS College of Engineering (BMSCE)</h4>
-                <p class="text-gray-400 text-sm">BE in Computer Science & Engineering (2018-2022)</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-16 text-center border-t border-gray-900 mt-20 text-gray-600 text-sm">
-        <p>&copy; 2023 Abhishikat Kumar Soni. Digital Portfolio.</p>
-        <div class="flex justify-center space-x-6 mt-4">
-            <a href="https://www.linkedin.com/in/abhishikat" class="hover:text-white transition"><i class="fab fa-linkedin text-xl"></i></a>
-            <a href="mailto:abhishikatsoni@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope text-xl"></i></a>
-        </div>
+        <p class="text-slate-600 text-sm font-mono">&copy; 2026 Abhishikat Soni. All systems operational.</p>
     </footer>
 
     <script src="script.js"></script>
